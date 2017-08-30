@@ -13,6 +13,7 @@ describe "User Search" do
   scenario "user can search for alt fuel stations by zip code" do
 
     brandon = User.create(name: "Brandon")
+    station = Station.create(name: "Station A", zip: "80203")
 
     visit '/'
     # select "80203", from: :zip_codes
