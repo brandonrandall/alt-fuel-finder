@@ -15,8 +15,10 @@ describe "User Search" do
     brandon = User.create(name: "Brandon")
 
     visit '/'
-    select "80203", from: :zip_codes
-    click_on "Locate"
+    # select "80203", from: :zip_codes
+    # click_on "Locate"
+    expect(page).to have_content("all zip codes:")
+    click_on "80203"
     expect(page).to be("/search")
     expect(page).to have_content("top 10 closest stations; propane and electric")
     expect(page).to have_css(".station", count: 10)
