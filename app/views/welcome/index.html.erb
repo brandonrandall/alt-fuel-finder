@@ -1,2 +1,5 @@
-<h1>all zip codes:</h1>
-<%= link_to station[:zip], search_path %>
+all zip codes:
+<%= @connection %>
+<% @stations.each do |station| %>
+  <%= station %>
+<% end %>
